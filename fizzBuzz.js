@@ -65,6 +65,8 @@ testCases.forEach(([input, expected]) => {
 
   console.log(`Input: ${input} Expected ${expected} | Test Passed: ${passed}`);
 
+  // Loop through each element to compare them one by one (like a magnifying glass)
+  // This helps us see exactly WHERE the code fails if the test doesn't pass
   for (let i = 0; i < input; i++) {
     if (result.at(i) === expected.at(i)) {
       console.log(`Elements at ${i} is equal`);
