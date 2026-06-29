@@ -73,3 +73,15 @@ testCases.forEach(([input, expected]) => {
     }
   }
 });
+
+
+
+// ---------- Explanation of the Code: -----------
+
+// The problem asks to return an array based on checking the input integer and generating all numbers until reaching that integer ($n$). If the number is 3, we will generate numbers from 1 to 3; if the number is 5, we will generate numbers from 1 to 5, and so on.In this case, we will check a number and we need to store it in i, indexing from 1 to $n$. We will check if the number is divisible by 3 and 5; if it is, we will push "FizzBuzz" to the result array. If it is only divisible by 3, we will push "Fizz" to the result array; if it is only divisible by 5, we will push "Buzz" to the result array. And if it is not divisible by any of them, we will push the number as a string to the result array.Then, we will return the result array.
+
+// This array will store the elements from 0 to $n-1$. To check if the result is the expected one, we need to create our own testCases. We can use join(), but we are currently checking two different boxes, and each box is stored in a different memory location. 
+
+// So, they look identical, but they are not the same box. Using join() will convert them into a string, and with this, it will print that they are equal. However, if we have an expected array like ["12", "a", "b"] and the result was ["1", "2a", "b"], after using join(), both will become "12ab".
+
+// They look the same as strings, but they weren't in the order we expected at the beginning.For that reason, we use another for loop to compare each position of the array with each position of the expected array, using .at(). This will show if they are equal or not.
