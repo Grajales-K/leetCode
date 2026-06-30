@@ -64,14 +64,36 @@
  * @return {number[]}
  */
 
-var runningSum = function (nums) {
+
+// Code explanation:
+
+// For this function, we use a for loop to iterate through the input array `nums`. We maintain a variable `sumResult` that keeps track of the cumulative sum as we progress through the array.
+
+// newArrNumbers was declared with let because we will be adding new values to it as we iterate through the loop.
+
+// Because we will reuse the sumResult we need to declare with let, and then everytime the loop itereate will update this value.
+
+// And finally we return the new array `newArrNumbers` which contains the running sum of the input array. Each element in `newArrNumbers` corresponds to the sum of all previous elements in `nums` up to that index.
+
+
+
+let runningSum = function (nums) {
   let newArrNumbers = [];
+  //counter to store every sum for each index
   let sumResult = 0;
 
   for (let i = 0; i < nums.length; i++) {
+    //reassigned the sumResult to the previous sumResult + the current index value
     sumResult = sumResult + nums[i];
-    console.log(sumResult);
+
+    // console.log(sumResult);
+    //we use push to add the new sumResult to the newArrNumbers array
     newArrNumbers.push(sumResult);
   }
+  //return the new array with the running sum values
   return newArrNumbers;
 };
+
+
+
+ 
